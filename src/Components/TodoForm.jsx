@@ -3,6 +3,7 @@ import { useTodo } from "../Contex/Todocontex";
 
 function TodoForm() {
   const [inputValue, setInputValue] = useState("");
+  const [cat,setCat] = useState("Work");
   const { addTodo } = useTodo();
 
   const add = (e) => {
@@ -10,6 +11,7 @@ function TodoForm() {
     if (!inputValue.trim()) return;
     addTodo({ todo: inputValue.trim(), completed: false });
     setInputValue("");
+    setCat("work");
   };
 
   return (
